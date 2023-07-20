@@ -1,11 +1,14 @@
 import Comic from "./Comic"
 
-function ComicsContainer() {
+function ComicsContainer({ comics, URL, removeComic }) {
 
+  // console.log(comics)
   return (
-    <>
-      <Comic />
-    </>
+    <div className="flex-container">
+      {comics.map((comic) => {
+        return <Comic comic={comic} key={comic.id} URL={URL} removeComic={removeComic} />
+      })}
+    </div>
   )
 
 }
